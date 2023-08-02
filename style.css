@@ -1,0 +1,114 @@
+.icon-card {
+    width: 50px;
+    height: 50px;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 767.98px) { /* Mode handphone */
+    .card {
+        flex-basis: 100%; /* Ubah lebar card menjadi 100% pada mode handphone */
+        margin-bottom: 10px; /* Tambahkan ruang di antara card pada mode handphone */
+    }
+
+    .card-img-top {
+        /* width: 52px; 
+        height: 52px;  */
+        object-fit: cover; /* Atur objek gambar agar sesuai dengan ukuran yang ditentukan */
+        float: left; /* Float gambar logo ke kiri pada mode handphone */
+        margin-right: 10px; /* Berikan jarak antara gambar logo dan teks pada mode handphone */
+    }
+
+    .card-title {
+        margin-top: 5px; /* Atur margin atas pada judul untuk menjaga jarak dengan gambar logo */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { /* Mode tablet */
+    .card {
+        flex-basis: 50%; /* Ubah lebar card menjadi 50% pada mode tablet */
+        margin-bottom: 10px; /* Tambahkan ruang di antara card pada mode tablet */
+    }
+
+    .card-img-top {
+        width: 52px; /* Atur lebar gambar logo menjadi 52 piksel */
+        height: 52px; /* Atur tinggi gambar logo menjadi 52 piksel */
+        object-fit: cover; /* Atur objek gambar agar sesuai dengan ukuran yang ditentukan */
+        float: left; /* Float gambar logo ke kiri pada mode tablet */
+        margin-right: 10px; /* Berikan jarak antara gambar logo dan teks pada mode tablet */
+    }
+
+    .card-title {
+        margin-top: 5px; /* Atur margin atas pada judul untuk menjaga jarak dengan gambar logo */
+    }
+}
+
+.orange-line {
+    border-top: 3px solid orange;
+}
+
+
+.card-img {
+    height: 150px;
+    object-fit: cover;
+}
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+body {
+    font-family: Rubik, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    overflow-x: hidden;
+    color: #607289;
+}
+
+h5 {
+    font-size: 1rem;
+    line-height: 1.375;
+    font-family: Rubik, Arial, sans-serif;
+    font-weight: 500;
+    color: #030929;
+}
+
+a {
+    color: #818494;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer {
+    /* background: #ebf4fa; */
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    min-width: 200px;
+}
