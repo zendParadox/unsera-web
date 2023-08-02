@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="images/icon-unsera.png" />
     <link rel="stylesheet" href="style.css">
@@ -743,15 +744,27 @@
       </script>
     <script>
       // Custom JavaScript to show sub-menus on hover
-      document.querySelectorAll('.dropdown-submenu').forEach(function (element) {
-          element.addEventListener('mouseover', function () {
-              this.querySelector('.dropdown-menu').classList.add('show');
-          });
+      $(document).ready(function() {
+    // Menambahkan event click pada item menu dengan submenu
+    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+        if (!$(this).next().hasClass('show')) {
+            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        var $subMenu = $(this).next(".dropdown-menu");
+        $subMenu.toggleClass('show');
 
-          element.addEventListener('mouseout', function () {
-              this.querySelector('.dropdown-menu').classList.remove('show');
-          });
-      });
+        // Mengatur posisi submenu ketika di klik
+        if (!$subMenu.parent().hasClass('navbar-nav')) {
+            $subMenu.position({
+                my: "left top",
+                at: "right top",
+                of: $(this),
+            });
+        }
+
+        return false;
+    });
+});
   </script>
 </body>
 </html>
